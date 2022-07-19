@@ -2,10 +2,12 @@ package router
 
 // 使用するライブラリをimport
 import (
-	"ToDoList-Server/model"
 	"net/http"
 
+	"ToDoList-Server/model"
+
 	"github.com/google/uuid"
+
 	"github.com/labstack/echo/v4"
 )
 

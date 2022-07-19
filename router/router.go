@@ -10,7 +10,7 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
-//Routingを設定する関数　引数はecho.echo型であり、戻り値はerror型
+//Routingを設定する関数 引数はecho.echo型であり、戻り値はerror型
 func SetRouter(e *echo.Echo) error {
 
 	// 諸々の設定(*1)
@@ -20,7 +20,6 @@ func SetRouter(e *echo.Echo) error {
 	}))
 	e.Use(middleware.Recover())
 	e.Use(middleware.CORS())
-	e.PUT("/api/tasks/:taskID", ChangeFinishedTaskHandler)
 
 	// APIを書く場所
 	api := e.Group("/api")
@@ -33,7 +32,7 @@ func SetRouter(e *echo.Echo) error {
 			apiTasks.DELETE("/:taskID", DeleteTaskHandler)
 		}
 	}
-	
+
 	// 8000番のポートを開く(*2)
 	err := e.Start(":8000")
 	return err
